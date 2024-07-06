@@ -27,7 +27,10 @@ function generateAuthToken(userId, email, username) {
         email,
         username
     };
+    console.log(user);
+    console.log(JWT_SECRET);
     const token = jsonwebtoken_1.default.sign(user, JWT_SECRET, { expiresIn: '1d' });
+    console.log(token);
     return token;
 }
 const isValidAuthToken = (token) => __awaiter(void 0, void 0, void 0, function* () {

@@ -11,7 +11,11 @@ export function generateAuthToken(userId: number, email: string, username: strin
         email,
         username
     }
+    console.log(user);
+    console.log(JWT_SECRET);
     const token = jwt.sign(user, JWT_SECRET, { expiresIn: '1d' });
+    console.log(token);
+
     return token;
 }
 
